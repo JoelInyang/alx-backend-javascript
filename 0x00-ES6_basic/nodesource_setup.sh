@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 19.x repo onto a
+# Script to install the NodeSource Node.js 12.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_current.x | bash -
+# curl -sL https://deb.nodesource.com/setup_12.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_current.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_12.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_current.x"
-NODENAME="Node.js 19.x"
-NODEREPO="node_19.x"
+SCRSUFFIX="_12.x"
+NODENAME="Node.js 12.x"
+NODEREPO="node_12.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -110,10 +110,9 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Eighteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -140,10 +139,9 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Eighteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -238,12 +236,10 @@ check_alt "Devuan"         "ascii"           "Debian"        "stretch"
 check_alt "Devuan"         "beowulf"         "Debian"        "buster"
 check_alt "Devuan"         "chimaera"        "Debian"        "bullseye"
 check_alt "Devuan"         "ceres"           "Debian"        "sid"
-check_alt "Devuan"         "daedalus"        "Debian"        "bookworm"
 check_alt "Deepin"         "panda"           "Debian"        "sid"
 check_alt "Deepin"         "unstable"        "Debian"        "sid"
 check_alt "Deepin"         "stable"          "Debian"        "buster"
 check_alt "Deepin"         "apricot"         "Debian"        "buster"
-check_alt "Deepin"         "beige"           "Debian"        "bookworm"
 check_alt "elementaryOS"   "luna"            "Ubuntu"        "precise"
 check_alt "elementaryOS"   "freya"           "Ubuntu"        "trusty"
 check_alt "elementaryOS"   "loki"            "Ubuntu"        "xenial"
@@ -251,7 +247,6 @@ check_alt "elementaryOS"   "juno"            "Ubuntu"        "bionic"
 check_alt "elementaryOS"   "hera"            "Ubuntu"        "bionic"
 check_alt "elementaryOS"   "odin"            "Ubuntu"        "focal"
 check_alt "elementaryOS"   "jolnir"          "Ubuntu"        "focal"
-check_alt "elementaryOS"   "horus"           "Ubuntu"        "jammy"
 check_alt "Kali"           "sana"            "Debian"        "jessie"
 check_alt "Kali"           "kali-rolling"    "Debian"        "bullseye"
 check_alt "Linux Mint"     "maya"            "Ubuntu"        "precise"
@@ -272,7 +267,6 @@ check_alt "Linux Mint"     "ulyssa"          "Ubuntu"        "focal"
 check_alt "Linux Mint"     "uma"             "Ubuntu"        "focal"
 check_alt "Linux Mint"     "una"             "Ubuntu"        "focal"
 check_alt "Linux Mint"     "vanessa"         "Ubuntu"        "jammy"
-check_alt "Linux Mint"     "vera"            "Ubuntu"        "jammy"
 check_alt "Liquid Lemur"   "lemur-3"         "Debian"        "stretch"
 check_alt "LMDE"           "betsy"           "Debian"        "jessie"
 check_alt "LMDE"           "cindy"           "Debian"        "stretch"
