@@ -1,8 +1,9 @@
-function signUpUser(firstName, lastName) {
-  return Promise.resolve({ firstName, lastName });
+//returns a resolved promise below
+export default function signUpUser(firstName, lastName) {
+  return new Promise((resolve) => {
+    resolve({
+      firstName,
+      lastName,
+    });
+  });
 }
-signUpUser("John", "Doe").then(user => {
-  console.log(user.firstName); // Output: John
-  console.log(user.lastName); // Output: Doe
-});
-

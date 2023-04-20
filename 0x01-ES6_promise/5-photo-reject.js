@@ -1,15 +1,4 @@
-export default function uploadPhoto(fileName) {
-  return new Promise((resolve, reject) => {
-    reject(new Error(`${fileName} cannot be processed`));
-  });
+//Write a function named uploadPhoto. It should accept one argument fileName (string)
+export default function uploadPhoto(filename) {
+  return Promise.reject(new Error(`${filename} cannot be processed`));
 }
-import uploadPhoto from './uploadPhoto';
-
-uploadPhoto('my-photo.jpg')
-  .then(() => {
-    console.log('Photo uploaded successfully!');
-  })
-  .catch((error) => {
-    console.error(error.message);
-  });
-

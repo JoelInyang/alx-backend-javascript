@@ -1,12 +1,13 @@
-iimport { uploadPhoto, createUser } from './utils.js';
+//functions in utils.js return promises, use the prototype below to collectively resolve all the promises.
 
-function handleProfileSignup() {
-  Promise.all([uploadPhoto(), createUser()])
-    .then(([photoResponse, userResponse]) => {
-      console.log(`Body ${userResponse.firstName} ${userResponse.lastName}`);
-    })
-    .catch((error) => {
-      console.error('Signup system offline');
-    });
+import { uploadPhoto, createUser } from './utils';
+
+export default async function handleProfileSignup() {
+  try {
+    const userupload = await createUser();
+    const photo = await uploadPhoto();
+    console.log(`${photo.body} ${userupload.firstName} ${userupload.lastName}`);
+  } catch (err) {
+    console.log('Signup system offline');
+  }
 }
-
