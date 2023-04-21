@@ -1,1 +1,1 @@
-promise
+ES6_promise
